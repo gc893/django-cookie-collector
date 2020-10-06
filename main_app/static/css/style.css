@@ -1,0 +1,16 @@
+body {
+    color: #5e341a;
+}
+
+.nav-wrapper{
+    background-color: #e8c39c;
+}
+
+.nav-wrapper a{
+    color: #5e341a;
+}
+
+.page-footer{
+    color: #5e341a;
+    background-color: #e8c39c;
+}
