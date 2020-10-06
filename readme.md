@@ -23,7 +23,7 @@
 
 * Imported path and the necessary views on the *urls.py* file
 
-* Added *main_app's* routes to the *urlpatterns* list
+* Added *main_app's* routes to the *urlpatterns* list such as *(path('cookies/<<int:cookie_id>>/', views.cookies_detail, name='detail'))*
 
 * Imported *render* to the *views.py* file
 
