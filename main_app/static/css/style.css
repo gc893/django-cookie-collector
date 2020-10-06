@@ -25,6 +25,10 @@ main {
     background-color: #5e341a;
 }
 
+.btn:hover {
+    background-color: #6c4730;
+ }
+
 footer.page-footer {
     padding-top: 0;
     text-align: right;
