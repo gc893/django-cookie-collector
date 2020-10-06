@@ -4,7 +4,8 @@
 <h1>Cookies List</h1>
 
 {% for cookie in cookies %}
-  <div class="card">
+  <div class="card" style="margin: 10vmin 20% 10vmin 20%;">
+    <img src='{{ cookie.image_url }}' alt="cookie" style="width: 100%">
     <a id='card-links' href="{% url 'detail' cookie.id %}">
     <div class="card-content">
       <span class="card-title">{{ cookie.name }}</span>

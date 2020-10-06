@@ -23,6 +23,7 @@ main {
 
 .btn {
     background-color: #5e341a;
+    margin-bottom: 8vmin;
 }
 
 .btn:hover {
