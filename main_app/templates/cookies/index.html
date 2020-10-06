@@ -5,12 +5,14 @@
 
 {% for cookie in cookies %}
   <div class="card">
+    <a id='card-links' href="{% url 'detail' cookie.id %}">
     <div class="card-content">
       <span class="card-title">{{ cookie.name }}</span>
       <p>Flavor: {{ cookie.main_flavor }}</p>
       <p>Description: {{ cookie.description }}</p>
-        <p>Prep Time: {{ cookie.prep_time }} hrs.</p>
+      <p>Prep Time: {{ cookie.prep_time }} hrs.</p>
     </div>
+  </a>
   </div>
 {% endfor %}
 

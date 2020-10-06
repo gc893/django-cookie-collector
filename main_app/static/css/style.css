@@ -17,9 +17,18 @@ main {
     color: #5e341a;
 }
 
+#card-links {
+    color: #5e341a;
+}
+
+.btn {
+    background-color: #5e341a;
+}
+
 footer.page-footer {
     padding-top: 0;
     text-align: right;
     color: #5e341a;
     background-color: #e8c39c;
   }
+
