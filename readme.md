@@ -3,36 +3,36 @@
 ---
 ![](https://embed.widencdn.net/img/mccormick/u8pntu7ahp/2028x1141px/Vanilla_rich_chocolate_chip_cookies_004.jpg?crop=true&anchor=13,86&q=80&color=ffffffff&u=o2hyef)
 
-* Created the app with: *django-admin startproject catcollector*
+* Created the app with: __*django-admin startproject catcollector*__
 
-* Started main app with: *python3 manage.py startapp main_app*
+* Started main app with: __*python3 manage.py startapp main_app*__
 
-* Included app by adding *'main_app'* to *INSTALLED APPS* on *settings.py*
+* Included app by adding __*'main_app'*__ to __*INSTALLED APPS*__ on __*settings.py*__
 
-* Added PostgreSQL DB information to *settings.py*
+* Added PostgreSQL DB information to __*settings.py*__
 
-* Imported *models* from *django.db* to *models.py*
+* Imported __*models*__ from __*django.db*__ to __*models.py*__
 
-* Created a model by defining a function on *models.py*
+* Created a model by defining a function on __*models.py*__
 
-* Migrated the model with *python3 manage.py makemigrations* and *python3 manage.py migrate*
+* Migrated the model with __*python3 manage.py makemigrations*__ and __*python3 manage.py migrate*__
 
-* Created a file in *main_app* to define main_app routes
+* Created a file in __*main_app*__ to define main_app routes
 
-* Used these routes on the project by adding *path('', include('main_app.urls'))* to *urls.py*
+* Used these routes on the project by adding __*path('', include('main_app.urls'))*__ to __*urls.py*__
 
-* Imported path and the necessary views on the *urls.py* file
+* Imported path and the necessary views on the __*urls.py*__ file
 
-* Added *main_app's* routes to the *urlpatterns* list such as *(path('cookies/<<int:cookie_id>>/', views.cookies_detail, name='detail'))*
+* Added __*main_app's*__ routes to the __*urlpatterns*__ list such as __*(path('cookies/<<int:cookie_id>>/', views.cookies_detail, name='detail'))*__
 
-* Imported *render* to the *views.py* file
+* Imported __*render*__ to the __*views.py*__ file
 
-* Imported the model to the *views.py* file
+* Imported the model to the __*views.py*__ file
 
-* Defined the function to be called by the route to render a template *(return render(request, 'cookies/index.html', { 'cookies': cookies }))*
+* Defined the function to be called by the route to render a template __*(return render(request, 'cookies/index.html', { 'cookies': cookies }))*__
 
-* Created HTML templates *({% block content %} {% endblock %} and {% extends 'base.html' %} {% block content %} {% endblock %})* 
+* Created HTML templates __*({% block content %} {% endblock %} and {% extends 'base.html' %} {% block content %} {% endblock %})*__
 
-* Added CSS file *({% load static %} and link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}")* 
+* Added CSS file __*({% load static %} and link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}")*__
 
 ![](https://i.imgur.com/2dmfF39.png)
