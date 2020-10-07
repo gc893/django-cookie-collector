@@ -3,6 +3,8 @@
 ---
 ![](https://embed.widencdn.net/img/mccormick/u8pntu7ahp/2028x1141px/Vanilla_rich_chocolate_chip_cookies_004.jpg?crop=true&anchor=13,86&q=80&color=ffffffff&u=o2hyef)
 
+## Day 1: Rendering Data
+
 * Created the app with: __*django-admin startproject catcollector*__
 
 * Started main app with: __*python3 manage.py startapp main_app*__
@@ -34,5 +36,26 @@
 * Created HTML templates __*({% block content %} {% endblock %} and {% extends 'base.html' %} {% block content %} {% endblock %})*__
 
 * Added CSS file __*({% load static %} and link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}")*__
+
+## Day 2: CRUD Opeations and CBVs
+
+*  Imported __*ListView, CreateView and UpdateView and DeleteView*__ from __*django.views.generic.edit*__
+
+* Refactored index view function to CBV with:
+    ``` 
+    class CookieList(ListView):
+        model = Cookie
+        template_name = 'cookies/index.html'
+        context_object_name = 'cookies'
+    ```
+    &
+    ```
+    path('cookies/', CookieList.as_view(), name='cookies_index')
+    ```
+
+* Imported the class in the __*urls.py*__ file __*(from .views import CookieList
+)*__
+
+* Added create, update and delete links, classes and routes __*(also created main_app directory on Templates to add a form and confirm template).*__
 
 ![](https://i.imgur.com/2dmfF39.png)
