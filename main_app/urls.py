@@ -10,4 +10,5 @@ urlpatterns = [
     path('cookies/create/', views.CookieCreate.as_view(), name='cookies_create'),
     path('cookies/<int:pk>/update/', views.CookieUpdate.as_view(), name='cookies_update'),
     path('cookies/<int:pk>/delete/', views.CookieDelete.as_view(), name='cookies_delete'),
+    path('cookies/<int:cookie_id>/add_batch/', views.add_batch, name='add_batch')
 ]
