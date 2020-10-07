@@ -3,6 +3,12 @@ from django.urls import reverse
 
 # Create your models here.
 
+TIMES = (
+    ('M', 'Morning'),
+    ('A', 'Afternoon'),
+    ('E', 'Evening')
+)
+
 class Cookie(models.Model):
     name = models.CharField(max_length=100)
     main_flavor = models.CharField(max_length=100)
@@ -15,3 +21,13 @@ class Cookie(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'cookie_id': self.id})
+
+class Batch(models.Model):
+    date = models.DateField('Batch Date')
+    time = models.CharField(max_length=1, choices=TIMES, default=TIMES[0][0])
+
+    cookie = models.ForeignKey(Cookie, on_delete=models.CASCADE)
+
+    def __str__(self):
+    # Nice method for obtaining the friendly value of a Field.choice
+        return f"{self.get_time_display()} on {self.date}"
