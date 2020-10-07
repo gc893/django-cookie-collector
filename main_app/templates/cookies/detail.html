@@ -25,6 +25,12 @@
       {{ batch_form.as_p }}
       <input type="submit" class="btn" value="Add Batch">
     </form>
+    <br>
+    {% if cookie.done_for_today %}
+      <div class="card-panel teal-text center-align">All batches for {{cookie.name}} have been baked</div>
+    {% else %}
+      <div class="card-panel red-text center-align">{{cookie.name}} might have low inventory</div>
+    {% endif %}
     <table class="striped">
       <thead>
         <tr><th>Date</th><th>Meal</th></tr>

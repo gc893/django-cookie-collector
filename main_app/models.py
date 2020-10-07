@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 
 # Create your models here.
 
@@ -21,6 +22,9 @@ class Cookie(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'cookie_id': self.id})
+    
+    def done_for_today(self):
+        return self.batch_set.filter(date=date.today()).count() >= len(TIMES)
 
 class Batch(models.Model):
     date = models.DateField('Batch Date')
