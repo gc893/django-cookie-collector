@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from .models import Cookie
 
 # Create your views here.
@@ -25,3 +25,7 @@ class CookieList(ListView):
     template_name = 'cookies/index.html'
     # queryset = Cookie.objects.all()
     context_object_name = 'cookies'
+
+class CookieCreate(CreateView):
+  model = Cookie
+  fields = '__all__'
