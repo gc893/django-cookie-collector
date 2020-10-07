@@ -11,6 +11,10 @@
       <p>Description: {{ cookie.description }}</p>
       <p>Prep Time: {{ cookie.prep_time }} hrs.</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'cookies_update' cookie.id %}">Edit</a>
+    <a href="{% url 'cookies_delete' cookie.id %}">Delete</a>
+  </div>
 </div>
 <a href="/cookies" id='back-btn' class="waves-effect waves-light btn">Back</a>
 

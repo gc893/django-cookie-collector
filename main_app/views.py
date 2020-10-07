@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Cookie
 
 # Create your views here.
@@ -29,3 +29,12 @@ class CookieList(ListView):
 class CookieCreate(CreateView):
   model = Cookie
   fields = '__all__'
+
+class CookieUpdate(UpdateView):
+  model = Cookie
+  # Let's disallow the renaming of a cat by excluding the name field!
+  fields = '__all__'
+
+class CookieDelete(DeleteView):
+  model = Cookie
+  success_url = '/cookies/'
