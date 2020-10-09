@@ -13,4 +13,5 @@ urlpatterns = [
     path('cookies/<int:cookie_id>/add_batch/', views.add_batch, name='add_batch'),
     path('cookies/<int:cookie_id>/assoc_ing/<int:ingredient_id>/', views.assoc_ing, name='assoc_ing'),
     path('cookies/<int:cookie_id>/remove_ing/<int:ingredient_id>/', views.remove_ing, name='remove_ing'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]
