@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import Cookie
+from .models import Cookie, Ingredient
 from .forms import BatchForm
 
 # Create your views here.
@@ -19,9 +19,10 @@ def cookies_index(request):
 
 def cookies_detail(request, cookie_id):
   cookie = Cookie.objects.get(id=cookie_id)
+  ingredients_not_added = Ingredient.objects.exclude(id__in = cookie.ingredients.all().values_list('id'))
   batch_form = BatchForm()
   return render(request, 'cookies/detail.html', {
-    'cookie': cookie, 'batch_form': batch_form
+    'cookie': cookie, 'batch_form': batch_form, 'ingredients': ingredients_not_added
   })
 
 class CookieList(ListView):
@@ -53,4 +54,12 @@ def add_batch(request, cookie_id):
     new_batch = form.save(commit=False)
     new_batch.cookie_id = cookie_id
     new_batch.save()
+  return redirect('detail', cookie_id=cookie_id)
+
+def assoc_ing(request, cookie_id, ingredient_id):
+  Cookie.objects.get(id=cookie_id).ingredients.add(ingredient_id)
+  return redirect('detail', cookie_id=cookie_id)
+
+def remove_ing(request, cookie_id, ingredient_id):
+  Cookie.objects.get(id=cookie_id).ingredients.remove(ingredient_id)
   return redirect('detail', cookie_id=cookie_id)

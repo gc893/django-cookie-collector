@@ -10,12 +10,22 @@ TIMES = (
     ('E', 'Evening')
 )
 
+class Ingredient(models.Model):
+    name = models.CharField(max_length=100)
+    qtty = models.FloatField(max_length=100)
+    units = models.CharField(max_length=50)
+
+    def __str__(self):
+    # Nice method for obtaining the friendly value of a Field.choice
+        return f"{self.qtty} {self.units} of {self.name}"
+
 class Cookie(models.Model):
     name = models.CharField(max_length=100)
     main_flavor = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
     prep_time = models.IntegerField()
     image_url = models.CharField(max_length=255, null=True)
+    ingredients = models.ManyToManyField(Ingredient)
 
     def __str__(self):
         return self.name
